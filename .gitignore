@@ -63,3 +63,10 @@ node_modules/
 
 # dotenv environment variables file
 .env
+
+# hugo
+hugo/data/components.json
+hugo/data/webpack_assets.json
+hugo/static/components
+hugo/static/design
+hugo/themes
