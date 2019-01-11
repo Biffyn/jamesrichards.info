@@ -12,11 +12,14 @@
     "build:components": "cd components && npm run lint && npm run build",
     "build": "rm -rf public && npm run build:design && npm run build:components && npm run build:hugo",
     "algolia": "atomic-algolia",
-    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting"
+    "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting",
+    "oncommit": "run-s format:fix tslint:fix",
+    "format:fix": "pretty-quick --staged",
+    "tslint:fix": "cd components && npm run lint:fix"
   },
   "husky": {
     "hooks": {
-      "pre-commit": "pretty-quick --staged"
+      "pre-commit": "npm run oncommit"
     }
   },
   "keywords": [],

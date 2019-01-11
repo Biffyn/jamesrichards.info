@@ -15,8 +15,7 @@ import {
   encapsulation: ViewEncapsulation.ShadowDom
 })
 export class LazyImageComponent implements OnInit {
-
-  constructor(private cd: ChangeDetectorRef, private el: ElementRef) { }
+  constructor(private cd: ChangeDetectorRef, private el: ElementRef) {}
 
   @Input() src: string;
   @Input() alt: string;
@@ -61,7 +60,7 @@ export class LazyImageComponent implements OnInit {
   public log = () => {
     const state = this.state;
     console.log(state);
-  }
+  };
 
   // Custom Events
   private customEmit(val) {
@@ -69,5 +68,4 @@ export class LazyImageComponent implements OnInit {
     const domEvent = new CustomEvent('is-visible');
     this.el.nativeElement.dispatchEvent(domEvent);
   }
-
 }

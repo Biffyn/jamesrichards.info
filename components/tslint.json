@@ -1,5 +1,8 @@
 {
   "rulesDirectory": ["node_modules/codelyzer"],
+  "linterOptions": {
+    "exclude": ["node_modules/**/*.ts", "dist/**/*.ts"]
+  },
   "rules": {
     "arrow-return-shorthand": true,
     "callable-types": true,
@@ -44,7 +47,6 @@
     "prefer-const": true,
     "radix": true,
     "triple-equals": [true, "allow-null-check"],
-    "typeof-compare": true,
     "unified-signatures": true,
     "variable-name": false,
     "directive-selector": [true, "attribute", "app", "camelCase"],
