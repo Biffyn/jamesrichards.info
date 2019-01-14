@@ -1,4 +1,5 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
-title = "My New Hugo Site"
-theme = "timer-hugo-master"
+title = "James Richards"
+theme = "james-richards-io"
+MetaDataFormat = "toml"
