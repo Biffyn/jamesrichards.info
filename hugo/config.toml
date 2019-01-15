@@ -2,4 +2,6 @@ baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "James Richards"
 theme = "james-richards-io"
-MetaDataFormat = "toml"
+[permalinks]
+	page = "/:title/"
+	about = "/:filename/"
