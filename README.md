@@ -1,2 +1,2 @@
-# jamesrichards.info
-jamesrichards.info Website
+# jamesrichards.io
+jamesrichards.io Website
