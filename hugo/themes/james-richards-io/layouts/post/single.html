@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html>
+  {{ partial "head.html" . }}
+  <body>
+    {{ partial "header.html" . }}
+    <section class="fdb-block mx-5">
+      <h1>{{ .Title }}</h1>
+      <h3>{{ .Date.Format "Mon, Jan 2, 2006" }}</h3>
+    </section>
+    <section class="fdb-block">
+      <div class="container">
+        <div class="row"><div class="col text-left">{{ .Content }}</div></div>
+      </div>
+    </section>
+
+    {{ partial "footer.html" . }}
+  </body>
+</html>

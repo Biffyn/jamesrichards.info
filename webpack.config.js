@@ -1,5 +1,6 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const AssetsPlugin = require('assets-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -38,6 +39,11 @@ module.exports = {
     new MiniCssExtractPlugin({
       filename: 'css/[name].[chunkhash].css',
       chunkFilename: '[id].css'
+    }),
+    new AssetsPlugin({
+      filename: 'webpack_assets.json',
+      path: path.join(__dirname, './hugo/data/'),
+      prettyPrint: true
     })
   ]
 };
