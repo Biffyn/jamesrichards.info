@@ -1,6 +1,7 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "James Richards"
+publishDir = "../public"
 theme = "james-richards-io"
 [permalinks]
 	page = "/:title/"
