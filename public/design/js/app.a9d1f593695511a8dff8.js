@@ -20,7 +20,11 @@
       if ((1 & t && (e = r(e)), 8 & t)) return e;
       if (4 & t && 'object' == typeof e && e && e.__esModule) return e;
       var n = Object.create(null);
-      if ((r.r(n), Object.defineProperty(n, 'default', { enumerable: !0, value: e }), 2 & t && 'string' != typeof e))
+      if (
+        (r.r(n),
+        Object.defineProperty(n, 'default', { enumerable: !0, value: e }),
+        2 & t && 'string' != typeof e)
+      )
         for (var o in e)
           r.d(
             n,

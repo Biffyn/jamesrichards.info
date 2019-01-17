@@ -1,0 +1,15 @@
+.section {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizelegibility;
+  position: relative;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  overflow: hidden;
+  @apply bg-white py-24;
+
+  &.compact {
+    @apply py-12;
+  }
+}

@@ -1,15 +1,9 @@
 {
-  "printWidth": 120,
+  "printWidth": 100,
   "singleQuote": true,
   "useTabs": false,
   "tabWidth": 2,
   "semi": true,
   "bracketSpacing": true,
-  "arrowParens": "always",
-  "overrides": [{
-    "files": ".prettierrc",
-    "options": {
-      "parser": "json"
-    }
-  }]
+  "arrowParens": "always"
 }
