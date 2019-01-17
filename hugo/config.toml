@@ -1,7 +1,8 @@
 baseURL = "http://example.org/"
 languageCode = "en-us"
 title = "James Richards"
-theme = "james-richards-io"
+publishDir = "../public"
+enableRobotsTXT = true
 [permalinks]
 	page = "/:title/"
 	about = "/:filename/"

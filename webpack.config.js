@@ -1,6 +1,7 @@
 const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
 
 module.exports = {
@@ -30,12 +31,27 @@ module.exports = {
           MiniCssExtractPlugin.loader,
           // 'style-loader',
           'css-loader',
-          'postcss-loader'
+          'postcss-loader',
+          'sass-loader'
         ]
+      },
+      {
+        test: /bootstrap\.native/,
+        use: {
+          loader: 'bootstrap.native-loader',
+          options: {
+            only: ['collapse', 'button']
+          }
+        }
       }
     ]
   },
   plugins: [
+    new CleanWebpackPlugin(['js', 'css'], {
+      root: path.join(__dirname, 'hugo/static/design'),
+      beforeEmit: true,
+      watch: true
+    }),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[chunkhash].css',
       chunkFilename: '[id].css'
