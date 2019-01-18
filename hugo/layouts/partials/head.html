@@ -1,12 +1,7 @@
 <title>{{ .Title }}</title> <meta charset="utf-8" /> <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="HandheldFriendly" content="True" /> <meta name="MobileOptimized" content="320" />
 <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0" />
-<link
-  rel="stylesheet"
-  href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
-  integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO"
-  crossorigin="anonymous"
-/>
+
 <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" />
 <link
   rel="stylesheet"
@@ -14,5 +9,6 @@
   integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU"
   crossorigin="anonymous"
 />
-<link rel="stylesheet" type="text/css" href="/css/froala_blocks.min.css" />
+
+<script defer src="/design/{{ .Site.Data.webpack_assets.app.js }}"></script>
 <link rel="stylesheet" type="text/css" href="/design/{{ .Site.Data.webpack_assets.app.css }}" />

@@ -1,23 +1,23 @@
-const tailwindcss = require('tailwindcss');
 const autoprefixer = require('autoprefixer');
 const cssnano = require('cssnano');
 const purgecss = require('@fullhuman/postcss-purgecss');
-
-class TailwindExtractor {
-  static extract(content) {
-    return content.match(/[A-z0-9-:\/]+/g);
-  }
-}
 
 module.exports = {
   plugins: [
     require('postcss-import')({
       path: ['design']
     }),
-    tailwindcss('./tailwind.js'),
+    // purgecss({
+    //   content: ['hugo/layouts/**/*.html'],
+    //   fontFace: true,
+    //   whitelist: ['collapsing', 'collapsed', 'show']
+    // }),
     cssnano({
       preset: 'default'
     }),
-    autoprefixer()
+    autoprefixer({
+      grid: true,
+      browsers: ['>1%']
+    })
   ]
 };
