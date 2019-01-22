@@ -1,0 +1,13 @@
+.btn {
+  &.lead {
+    text-transform: uppercase;
+  }
+}
+
+.btn-primary {
+  color: #fff;
+  background: #8e2de2;
+  background: -webkit-linear-gradient(to top left, #4a00e0, #8e2de2);
+  background: linear-gradient(to top left, #4a00e0, #8e2de2);
+  border-color: transparent;
+}

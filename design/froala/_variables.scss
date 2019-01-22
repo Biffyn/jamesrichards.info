@@ -3,13 +3,13 @@
 @import 'node_modules/bootstrap/scss/variables';
 
 // Colors.
-$primary-color: #329ef7;
-$accent-color: #fe6655;
+$primary-color: #8e2de2;
+$accent-color: #ffa7ff;
 $white: #ffffff;
-$black: #000000;
+$black: #201925;
 $font-color: #444444;
 
-$primary: #329ef7;
+$primary: #8e2de2;
 $link-color: $primary;
 
 // Sizes.
@@ -17,6 +17,7 @@ $heading-margin: 0.7em;
 
 // Block
 $block-padding: 7.5rem;
+$block-padding-compact: 3rem;
 
 $btn-shadow: 1;
 
@@ -36,7 +37,7 @@ $headings-margin-bottom: 0.5rem;
 $headings-margin-top: 0.3rem;
 $headings-font-weight: 600;
 
-$paragraph-font-color: #8892a0;
+$paragraph-font-color: #4a4a4a;
 $paragraph-font-weight: 400;
 
 $lead-font-size: 1.4rem;
@@ -60,7 +61,6 @@ $btn-padding-x-sm: 1.625rem;
 $btn-padding-x-lg: 1.625rem;
 // Button border radius.
 $btn-border-radius: 0.25rem;
-
 $btn-border-width: 0.125rem;
 $input-btn-font-size: 1rem;
 $input-height-border: 0.25rem;
