@@ -1,1 +1,18 @@
 @import 'froala/froala_blocks';
+@import 'elements/image';
+@import 'elements/button';
+
+a {
+  color: $primary-color;
+  text-decoration: none;
+  background-color: transparent;
+}
+
+.primary-bg {
+  background: #8e2de2;
+
+  p.lead,
+  h1 {
+    color: white;
+  }
+}

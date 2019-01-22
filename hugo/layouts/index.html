@@ -1,18 +1,15 @@
 {{ define "main" }}
-<section class="fdb-block">
-  <div class="col-fill-left" style="background-image: url(img/people/5.jpg);"></div>
 
-  <div class="container">
-    <div class="row justify-content-end">
-      <div class="col-12 col-md-5 text-center">
-        <h1>Froala Blocks</h1>
+<section class="fdb-block compact">
+  <div class="container align-items-center justify-content-center d-flex">
+    <div class="row align-items-center text-left">
+      <div class="col-12 col-sm-6"><img alt="image" class="img-fluid" src="img/people/5.jpg" /></div>
+
+      <div class="col-12 col-lg-5 ml-auto pt-5 pt-lg-0">
+        <h1>Hi there, I’m James.</h1>
         <p class="lead">
-          When she reached the first hills of the Italic Mountains, she had a last view back on the skyline of her
-          hometown Bookmarksgrove
-        </p>
-
-        <p class="mt-4">
-          <a href="/about">Learn More <i class="fas fa-angle-right"></i></a>
+          I am a developer based in Osnabrück. Currntly at <a href="https://www.lm-ag.de/">LM IT Services AG</a>. When
+          I'm not building things for the web I'm probably running, distiling gin or drinking gin.
         </p>
       </div>
     </div>
@@ -22,28 +19,16 @@
 <section class="fdb-block">
   <div class="container">
     <div class="row mt-5">
-      <div class="col-12 col-md-6 col-lg-5">
-        <h2>Contact Us</h2>
-        <p class="lead">
-          Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind
-          texts. Separated they live in Bookmarksgrove.
-        </p>
-
-        <p class="lead">It is a paradisematic country, in which roasted parts of sentences fly into your mouth.</p>
-
-        <p class="h3 mt-5"><strong>Email:</strong> <a href="https://www.froala.com">hello@website.com</a></p>
-        <p class="lead"><strong>Phone:</strong> <a href="https://www.froala.com">+44 123 123 1232</a></p>
-      </div>
+      <div class="col-12 col-md-6 col-lg-5"><h2>Get in touch</h2></div>
 
       <div class="col-12 col-md-6 ml-auto pt-5 pt-md-0">
         <form>
           <div class="row">
-            <div class="col"><input type="text" class="form-control" placeholder="First name" /></div>
-            <div class="col"><input type="text" class="form-control" placeholder="Last name" /></div>
+            <div class="col"><input type="text" class="form-control" placeholder="Name" /></div>
           </div>
 
           <div class="row mt-4">
-            <div class="col"><input type="email" class="form-control" placeholder="Enter email" /></div>
+            <div class="col"><input type="email" class="form-control" placeholder="Email" /></div>
           </div>
 
           <div class="row mt-4">
@@ -51,11 +36,14 @@
           </div>
           <div class="row mt-4">
             <div class="col">
-              <textarea class="form-control" name="message" rows="3" placeholder="How can we help?"></textarea>
+              <textarea class="form-control" name="message" rows="3" placeholder="Your message..."></textarea>
             </div>
           </div>
           <div class="row mt-4">
-            <div class="col"><button type="submit" class="btn btn-primary">Submit</button></div>
+            <div class="col d-block d-sm-none">
+              <button type="submit" class="btn btn-primary btn-block">Submit</button>
+            </div>
+            <div class="col d-none d-sm-block"><button type="submit" class="btn btn-primary">Submit</button></div>
           </div>
         </form>
       </div>

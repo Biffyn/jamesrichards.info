@@ -46,6 +46,10 @@ p {
   overflow: hidden;
   background-color: $white;
 
+  &.compact {
+    padding: $block-padding-compact 0;
+  }
+
   .container {
     background-position: center;
     background-repeat: no-repeat;
