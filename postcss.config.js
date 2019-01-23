@@ -7,11 +7,11 @@ module.exports = {
     require('postcss-import')({
       path: ['design']
     }),
-    // purgecss({
-    //   content: ['hugo/layouts/**/*.html'],
-    //   fontFace: true,
-    //   whitelist: ['collapsing', 'collapsed', 'show']
-    // }),
+    purgecss({
+      content: ['hugo/layouts/**/*.html'],
+      fontFace: true,
+      whitelist: ['collapsing', 'collapsed', 'show']
+    }),
     cssnano({
       preset: 'default'
     }),
