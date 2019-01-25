@@ -1,0 +1,72 @@
+<section class="fdb-block py-0">
+  <div class="container py-5 my-5" style="background-image: url(assets/imgs/shapes/9.svg);">
+    <div class="row py-5">
+      <div class="col py-5">
+        <div class="fdb-box fdb-touch">
+          <div class="row text-center justify-content-center">
+            <div class="col-12 col-md-9 col-lg-7">
+              <h1><slot name="header">Default Header</slot></h1>
+              <p class="lead"><slot name="caption">Default Caption</slot></p>
+            </div>
+          </div>
+
+          <form [formGroup]="contactForm" (submit)="onSubmit()">
+            <div class="row">
+              <div class="col-12 col-md">
+                <input type="text" class="form-control" placeholder="Name" formControlName="name" />
+                <div class="alert alert-danger" [hidden]="name.valid">Required</div>
+              </div>
+              <div class="col-12 col-md mt-4 mt-md-0">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Email"
+                  formControlName="email"
+                />
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col">
+                <input
+                  type="text"
+                  class="form-control"
+                  placeholder="Subject"
+                  formControlName="subject"
+                />
+              </div>
+            </div>
+
+            <div class="row mt-4">
+              <div class="col">
+                <textarea
+                  class="form-control"
+                  name="message"
+                  rows="3"
+                  placeholder="..."
+                  formControlName="meassage"
+                ></textarea>
+              </div>
+            </div>
+            <!-- <div class="row mt-4">
+              <input
+                formControlName="contactFormCopy"
+                type="checkbox"
+                class="custom-control-input"
+                id="defaultContactFormCopy"
+              />
+              <label class="custom-control-label" for="defaultContactFormCopy"
+                >Send me a copy of this message</label
+              >
+            </div> -->
+            <div class="row mt-4">
+              <div class="col text-center">
+                <button type="submit" class="btn btn-primary">Submit</button>
+              </div>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
