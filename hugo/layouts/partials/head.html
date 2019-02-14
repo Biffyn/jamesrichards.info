@@ -6,14 +6,20 @@
   content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0"
 />
 
+<meta name="description" content="{{ .Description }}" />
+
 <link href="https://fonts.googleapis.com/css?family=Work+Sans:300,400,700" rel="stylesheet" />
-<link
-  rel="stylesheet"
-  href="https://use.fontawesome.com/releases/v5.7.2/css/all.css"
-  integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr"
-  crossorigin="anonymous"
-/>
 <link rel="prefetch" as="script" href="/components/{{ .Site.Data.components.bundle }}" />
 <script data-reload src="/design/{{ .Site.Data.webpack_assets.app.js }}"></script>
 <link rel="stylesheet" type="text/css" href="/design/{{ .Site.Data.webpack_assets.app.css }}" />
 <script defer src="/components/{{ .Site.Data.components.bundle }}"></script>
+
+<link rel="shortcut icon" href="/img/icons/favicon.png" type="image/x-icon" />
+<meta name="theme-color" content="#8e2de2" /> <link rel="manifest" href="/manifest.json" />
+<script>
+  if ('serviceWorker' in navigator) {
+    window.addEventListener('load', () => {
+      navigator.serviceWorker.register('/sw.js');
+    });
+  }
+</script>

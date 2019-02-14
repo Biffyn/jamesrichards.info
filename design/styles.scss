@@ -20,6 +20,7 @@ $colors: (
 @import 'elements/image';
 @import 'elements/button';
 @import 'components/notification';
+@import 'components/featured-project';
 
 a {
   color: $primary-color;
