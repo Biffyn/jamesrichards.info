@@ -1,6 +1,25 @@
+$colors: (
+  red: hsl(348, 100%, 61%),
+  blue: #498afb,
+  orange: #fa8142,
+  green: #46d85a,
+  purple: hsl(265, 50%, 60%),
+  yellow: hsl(48, 100%, 67%),
+  pink: #ff4088
+);
+
+:root {
+  @each $name, $color in $colors {
+    --#{$name}: #{$color};
+    --#{$name}-dark: #{darken($color, 10%)};
+    --#{$name}-light: #{lighten($color, 10%)};
+  }
+}
+
 @import 'froala/froala_blocks';
 @import 'elements/image';
 @import 'elements/button';
+@import 'components/notification';
 
 a {
   color: $primary-color;

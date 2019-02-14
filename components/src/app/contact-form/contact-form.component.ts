@@ -1,59 +1,61 @@
-import { Component, OnInit, HostListener, Input } from '@angular/core';
-import { FormGroup, FormBuilder, Validators, FormControl } from '@angular/forms';
+import { Component, OnInit, HostListener, Input, ViewEncapsulation } from '@angular/core';
+import { FormGroup, FormBuilder, Validators, FormControl, AbstractControl } from '@angular/forms';
 import { ContactService } from './contact.service';
-import { ContactMessage } from '../models/contactMessage.model';
-import { SnotifyService } from 'ng-snotify';
+import { NotificationService } from '../notification/notification.service';
+import { onMessageError, onMessageSuccess } from '../notification/notifications';
 
 @Component({
   templateUrl: './contact-form.component.html'
 })
 export class ContactFormComponent implements OnInit {
   contactForm: FormGroup;
-  disabledSubmitButton = true;
-
-  model = new ContactMessage();
-  submitted = false;
-  error: {};
-  body = 'Your message was sucessfully Sent';
-  title = 'Your message was sucessfully Sent';
-  snotifyConfig = {
-    timeout: 2000,
-    showProgressBar: false,
-    closeOnClick: false,
-    pauseOnHover: true
-  };
+  @Input() title = 'Default Title';
+  @Input() lead = 'Default Lead';
 
   constructor(
-    public formBuilder: FormBuilder,
+    private fb: FormBuilder,
     private contactService: ContactService,
-    private snotifyService: SnotifyService
-  ) {
-    this.contactForm = this.formBuilder.group({
-      name: ['', Validators.required],
+    private ns: NotificationService
+  ) {}
+
+  public ngOnInit() {
+    this.contactForm = this.fb.group({
+      name: ['', [Validators.required]],
       email: ['', [Validators.required, Validators.email]],
       subject: ['', [Validators.required]],
       message: ['', [Validators.required]]
     });
   }
 
-  public ngOnInit() {}
+  public get name() {
+    return this.contactForm.get('name');
+  }
 
-  @HostListener('input') oninput() {
-    if (this.contactForm.valid) {
-      this.disabledSubmitButton = false;
-    }
+  public get email() {
+    return this.contactForm.get('email');
+  }
+
+  public get subject() {
+    return this.contactForm.get('subject');
+  }
+
+  public get message() {
+    return this.contactForm.get('message');
   }
 
   public onSubmit() {
-    this.contactService.sendMessage(this.contactForm.value).subscribe(
-      () => {
-        alert('Your message has been sent.');
-        this.contactForm.reset();
-        this.disabledSubmitButton = true;
-      },
-      (error) => {
-        console.log('ERROR');
-      }
-    );
+    if (!this.contactForm.valid) {
+      return;
+    } else {
+      this.contactService.sendMessage(this.contactForm.value).subscribe(
+        () => {
+          this.contactForm.reset();
+          this.ns.setNotification(onMessageSuccess);
+        },
+        () => {
+          this.ns.setNotification(onMessageError);
+        }
+      );
+    }
   }
 }

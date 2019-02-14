@@ -2,15 +2,17 @@ import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http
 import { throwError } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 import { Injectable } from '@angular/core';
-import { checkBinding } from '@angular/core/src/view/util';
 import { ContactMessage } from '../models/contactMessage.model';
+import { environment } from '../../environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactService {
-  serverUrl = 'http://localhost:3000/';
-  errorData: {};
+  private env = environment;
+  private serverUrl = this.env.firebase.functions.serverUrl;
+
+  private errorData: {};
 
   httpOptions = {
     headers: new HttpHeaders({ 'Content-Type': 'application/json' })
@@ -20,11 +22,7 @@ export class ContactService {
 
   public sendMessage(formdata: ContactMessage) {
     return this.http
-      .post<ContactMessage>(
-        this.serverUrl + 'api/contact',
-        JSON.stringify(formdata),
-        this.httpOptions
-      )
+      .post(this.serverUrl + 'sendContactEmail', JSON.stringify(formdata), this.httpOptions)
       .pipe(catchError(this.handleError));
   }
 
@@ -32,7 +30,8 @@ export class ContactService {
     if (error.error instanceof ErrorEvent) {
       console.error('An error occurred:', error.error.message);
     } else {
-      console.error(`Backend returned code ${error.status}, ` + `body was: ${error.error}`);
+      console.error(`Backend returned code ${error.status}, ` + `body was: ${error.error.message}`);
+      console.log(error);
     }
 
     this.errorData = {

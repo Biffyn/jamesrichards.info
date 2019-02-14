@@ -1,10 +1,10 @@
-export const onMessageError = {
-  title: 'Welcome!',
-  text: 'You are in 🍻! Welcome to the club',
+export const onMessageSuccess = {
+  title: 'Message Sent!',
+  text: 'Awesome, thanks for reaching out to me',
   className: 'box-green'
 };
-export const onMessageSuccess = {
-  title: 'Bye Bye!',
-  text: "It's been fun! See la later :)",
+export const onMessageError = {
+  title: 'Message Send Error!',
+  text: 'Oh no something went wrong there',
   className: 'box-red'
 };
