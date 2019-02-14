@@ -74,3 +74,4 @@ hugo/static/components
 hugo/static/design
 
 /public
+/server
