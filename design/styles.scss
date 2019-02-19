@@ -21,6 +21,7 @@ $colors: (
 @import 'elements/button';
 @import 'components/notification';
 @import 'components/featured-project';
+@import 'components/hero';
 
 a {
   color: $primary-color;

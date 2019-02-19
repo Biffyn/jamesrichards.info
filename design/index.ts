@@ -1,6 +1,6 @@
 import './styles.scss';
 import 'bootstrap.native';
-import hotroute from 'hotroute';
+//import hotroute from 'hotroute';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faGithub } from '@fortawesome/free-brands-svg-icons/faGithub';
 import { faTwitter } from '@fortawesome/free-brands-svg-icons/faTwitter';
@@ -10,6 +10,6 @@ import { faEnvelope } from '@fortawesome/free-regular-svg-icons/faEnvelope';
 library.add(faGithub, faTwitter, faLinkedin, faEnvelope);
 dom.watch();
 
-(() => {
-  const router = hotroute({ log: true, prefetch: true });
-})();
+// (() => {
+//   const router = hotroute({ prefetch: true });
+// })();

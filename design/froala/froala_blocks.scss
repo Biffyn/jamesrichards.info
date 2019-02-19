@@ -78,7 +78,7 @@ p {
     padding: 3.75rem 2.5rem;
     overflow: hidden;
     color: $font-color;
-    @include border-radius(0.25rem);
+    @include border-radius(0.5rem);
     box-shadow: $box-shadow !important;
   }
 
@@ -277,4 +277,28 @@ header + header {
 .bg-gray {
   background-color: #f4f7fe;
   color: $font-color;
+}
+
+.h1 {
+  font-size: $h1-font-size;
+}
+
+.h2 {
+  font-size: $h2-font-size;
+}
+
+.h3 {
+  font-size: $h3-font-size;
+}
+
+.h4 {
+  font-size: $h4-font-size;
+}
+
+.h5 {
+  font-size: $h5-font-size;
+}
+
+.h5 {
+  font-size: $h6-font-size;
 }

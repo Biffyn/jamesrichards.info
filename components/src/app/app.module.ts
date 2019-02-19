@@ -18,11 +18,7 @@ export class AppModule {
   constructor(private injector: Injector) {}
 
   ngDoBootstrap() {
-    const elements: any[] = [
-      [LazyImageComponent, 'lazy-img'],
-      [ContactFormComponent, 'contact-form'],
-      [NotificationComponent, 'app-notification']
-    ];
+    const elements: any[] = [[ContactFormComponent, 'contact-form'], [NotificationComponent, 'app-notification']];
 
     for (const [component, name] of elements) {
       const el = createCustomElement(component, { injector: this.injector });
