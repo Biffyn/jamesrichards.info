@@ -8,13 +8,13 @@ steps:
       - --location=global
       - --keyring=jr-info
       - --key=cloudbuild-env
+  - name: 'gcr.io/$PROJECT_ID/hugo'
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
   - name: 'gcr.io/cloud-builders/npm'
     args: ['install']
     dir: 'components'
   - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'build:ci']
-  - name: 'gcr.io/$PROJECT_ID/hugo'
+    args: ['run', 'build:']
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'deploy']
