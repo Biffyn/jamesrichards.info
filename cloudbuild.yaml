@@ -16,7 +16,7 @@ steps:
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'build:ci']
   - name: 'gcr.io/$PROJECT_ID/hugo'
-    arge: ['hugo']
+    args: ['hugo']
     dir: 'hugo'
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'deploy']
