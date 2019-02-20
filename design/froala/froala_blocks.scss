@@ -302,3 +302,12 @@ header + header {
 .h5 {
   font-size: $h6-font-size;
 }
+
+.section-seperator {
+  background-image: linear-gradient(to right bottom, #da95ed, #e594e7, #ef93e0, #f892d8, #ff92d1);
+  padding: $block-padding-compact 0;
+  color: mix($black, $white, 3%);
+  p.lead {
+    color: white;
+  }
+}

@@ -14,6 +14,7 @@ steps:
     args: ['install']
     dir: 'components'
   - name: 'gcr.io/cloud-builders/npm'
-    args: ['run', 'build']
+    args: ['run', 'build:ci']
+  - name: 'gcr.io/$PROJECT_ID/hugo'
   - name: 'gcr.io/cloud-builders/npm'
     args: ['run', 'deploy']

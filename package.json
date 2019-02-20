@@ -12,6 +12,7 @@
     "build:components": "cd components && npm run lint && npm run build",
     "build:components:dev": "cd components && npm run lint && npm run build:dev",
     "build": "run-s prebuild build:components build:design build:hugo",
+    "build:ci": "run-s prebuild build:components build:design",
     "deploy": "firebase deploy --debug --token \"$FIREBASE_TOKEN\" --only hosting",
     "oncommit": "run-s format:fix tslint:fix",
     "format:fix": "pretty-quick --staged",

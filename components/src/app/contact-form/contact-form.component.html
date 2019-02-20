@@ -5,7 +5,7 @@
         <div class="fdb-box fdb-touch">
           <div class="row text-center justify-content-center">
             <div class="col-12 col-md-9 col-lg-7">
-              <p class="lead">
+              <p class="lead pb-3">
                 Feel free to drop me a “Hey or Hallo”, writing me a
                 <a href="https://twitter.com/JRichardsWeb">tweet</a>, or sending me an
                 <a href="mailto:james@jamesrichards.io">email.</a>
@@ -18,8 +18,12 @@
                 <input
                   type="text"
                   class="form-control"
+                  aria-label="Name"
                   placeholder="Name"
                   required
+                  aria-required="true"
+                  attr.aria-invalid="{{ (name.dirty || name.touched) && name.invalid ? true : false }}"
+                  aria-errormessage="name-required"
                   formControlName="name"
                   [ngClass]="{ 'is-invalid': (name.dirty || name.touched) && name.invalid }"
                 />
@@ -27,7 +31,7 @@
                   *ngIf="(name.dirty || name.touched) && name.invalid && !!name.errors.required"
                   class="invalid-feedback"
                 >
-                  <div>Name is required</div>
+                  <div id="name-required">Name is required</div>
                 </div>
               </div>
               <div class="col-12 col-md mt-4 mt-md-0">
@@ -36,8 +40,12 @@
                   id="email"
                   class="form-control"
                   placeholder="Email"
+                  aria-label="Enter your email addrtessEmail"
                   formControlName="email"
                   required
+                  aria-required="true"
+                  attr.aria-invalid="{{ (email.dirty || email.touched) && email.invalid ? true : false }}"
+                  aria-errormessage="valid-email"
                   autocomplete="off"
                   [ngClass]="{ 'is-invalid': (email.dirty || email.touched) && email.invalid }"
                 />
@@ -45,8 +53,8 @@
                   <div *ngIf="(email.dirty || email.touched) && email.invalid && !!email.errors.required">
                     Email is required
                   </div>
-                  <div *ngIf="(email.dirty || email.touched) && email.invalid && !!email.errors.email">
-                    Email must be a valid email address
+                  <div id="valid-email" *ngIf="(email.dirty || email.touched) && email.invalid && !!email.errors.email">
+                    The entered vale must be a valid email address
                   </div>
                 </div>
               </div>
@@ -54,7 +62,14 @@
 
             <div class="row mt-4">
               <div class="col">
-                <input type="text" class="form-control" placeholder="Subject" formControlName="subject" />
+                <input
+                  type="text"
+                  class="form-control"
+                  aria-label="Subject (optional but helpful)"
+                  aria-required="false"
+                  placeholder="Subject"
+                  formControlName="subject"
+                />
               </div>
             </div>
 
@@ -64,18 +79,23 @@
                   class="form-control"
                   name="message"
                   rows="3"
+                  aria-label="Meassage"
                   placeholder="..."
                   required
+                  aria-required="true"
+                  attr.aria-invalid="{{ (message.dirty || message.touched) && message.invalid ? true : false }}"
+                  aria-errormessage="message-required"
                   formControlName="message"
                   [ngClass]="{
                     'is-invalid': (message.dirty || message.touched) && message.invalid
                   }"
                 ></textarea>
                 <div
+                  id="message-required"
                   class="invalid-feedback"
                   *ngIf="(message.dirty || message.touched) && message.invalid && !!message.errors.required"
                 >
-                  <div>Message is required</div>
+                  Message is required
                 </div>
               </div>
             </div>
