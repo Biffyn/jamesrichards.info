@@ -27,6 +27,11 @@ a {
   color: $primary-color;
   text-decoration: none;
   background-color: transparent;
+
+  &:hover {
+    color: $primary-color;
+    text-decoration: underline;
+  }
 }
 
 .primary-bg {

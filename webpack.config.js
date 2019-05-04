@@ -3,6 +3,8 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const AssetsPlugin = require('assets-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const devMode = process.env.NODE_ENV !== 'production';
+const TerserPlugin = require('terser-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: {
@@ -47,11 +49,7 @@ module.exports = {
     ]
   },
   plugins: [
-    new CleanWebpackPlugin(['js', 'css'], {
-      root: path.join(__dirname, 'hugo/static/design'),
-      beforeEmit: true,
-      watch: true
-    }),
+    new CleanWebpackPlugin(),
     new MiniCssExtractPlugin({
       filename: 'css/[name].[chunkhash].css',
       chunkFilename: '[id].css'
@@ -60,6 +58,14 @@ module.exports = {
       filename: 'webpack_assets.json',
       path: path.join(__dirname, './hugo/data/'),
       prettyPrint: true
-    })
-  ]
+    }),
+    new webpack.optimize.ModuleConcatenationPlugin()
+  ],
+  optimization: {
+    minimizer: [
+      new TerserPlugin({
+        cache: true
+      })
+    ]
+  }
 };
