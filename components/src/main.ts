@@ -12,7 +12,6 @@ import * as firebase from 'firebase/app';
 import 'firebase/performance';
 
 firebase.initializeApp(environment.firebase);
-firebase.firestore().settings({ timestampsInSnapshots: true });
 
 firebase.performance();
 
