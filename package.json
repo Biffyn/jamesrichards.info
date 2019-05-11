@@ -6,7 +6,7 @@
   "scripts": {
     "dev:design": "webpack --watch",
     "dev:hugo": "cd hugo && hugo server --verbose --disableFastRender",
-    "dev": "concurrently \"npm run dev:hugo\" \"npm run dev:design\"",
+    "start": "concurrently \"npm run dev:hugo\" \"npm run dev:design\"",
     "build:design": "webpack",
     "build:hugo": "cd hugo && hugo",
     "build:components": "cd components && npm run lint && npm run build",
