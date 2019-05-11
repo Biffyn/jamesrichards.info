@@ -1,2 +1,2 @@
-# jamesrichards.io
-jamesrichards.io Website
+# JamesRichards.dev
+jamesrichards.dev Website
